@@ -28,7 +28,8 @@ export class GeminiController {
     @ApiResponse({ status: 404, description: "No encontrado" })
     async createTextGemini(@Body() body: PromptBody): Promise<ResponseGemini> {
         // return "response on gemini "+prompt.prompt;
-        let text =  await Consulting("hola");
+        // console.log(body);
+        let text =  await Consulting(body.prompt);
         return {
             statusCode: 200,
             message: 'Operación exitosa',
